@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <style>
         a {
-            color:red;
+            color:black;
+            text-decoration: none;
+        }
+        h1 {
+           font-size: 50px;
+           text-align: center; 
         }
     </style>
 </head>
@@ -16,7 +21,7 @@
 </ul>
 <ol>
     <li><a href="2.html"> HTML</a></li>
-    <li><a href="3.html"> CSS</a></li>
+    <li><a href="3.html" style="color:red; text-decoration:underline ;"> CSS</a></li>
     <li><a href="4.html"> Javascript</a></li>
 </ol>
 <!--
@@ -31,6 +36,12 @@
 </ol>
 -->
 <h2>CSS</h2>
+<!--
+     a {                            // Selector 선택자
+            color:black;            // Declaration 선언 효과
+            text-decoration: none;  // Declaration 에서 color는 속성 property
+        }                           //                  red는 속성값 property Value
+-->
 <p>
     <ul>
         <p>
@@ -44,7 +55,24 @@
         <li>
             <p>head 에서 style 이라는 css 언어를 넣고 a 중괄호 넣고 컬러:레드; 닫으면 모든 a 태그가 빨간색으로 바뀐다.
             - 중복의 제거!</p>
-        </li>        
+        </li> 
+        <li>
+            <p> head 에서 style 태그의 text-decoration: none; - 웹 페이지의 모든 a 태그에 대해 밑줄이 없어진다.</p>
+        </li>
+        <li>
+            <p> html 개인 코드에 style 넣고 text-decoration: underline; - 이 개인 코드에서만 밑줄을 긋는 속성값을 부여한다.</p>
+        </li>
+        <li>
+            <p><div>ex - h1의 텍스트의 사이즈를 증가시키고 싶다. font-size: ;</div>
+                스몰 라지 등등 / px, %, em, rem 등 크기 정한다/ initial 기본값 설정 / inherit 부모 요소의 속성값을 상속</p>
+        </li>
+        <li>
+            <p><div>내가 h1의 텍스트를 중앙으로 오게 하고싶다. 위치를 이동시키고 싶다.</div>
+            text-align 속성 트랙 left, right, center, justify 쌍쌍이 자동 줄바꿈시 오른쪽 경계선 부분 구성</p> 
+        </li>
+        <!--
+            align 정렬하다.
+        -->
     </ul>    
 </p> 
 </body>
