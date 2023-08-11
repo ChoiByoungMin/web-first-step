@@ -1,0 +1,53 @@
+h1{
+    font-size: 50px;
+    text-align: center;
+    border-bottom: 1px solid blue;
+    margin: 0; padding: 20px;
+}
+#insite{
+    border-right: 1px solid blue;
+    width: 200px;
+}
+#insite > ul{
+    margin-top: 0;
+}
+#full{
+    display:grid;
+    grid-template-columns: 200px 1fr;
+}
+#outside {
+    padding:50px;
+}
+#camp{
+    border-top: 1px double skyblue;
+    border-bottom: 1px double skyblue;
+}
+h4{
+    border-top: 1px solid blue;
+    margin-top: 0;
+}
+#think{
+    border-top: 1px solid blue;
+}
+@media(max-width:700px){
+        h1{
+            border-bottom: 1px solid red;
+    }
+        #insite{
+            border-bottom: 1px solid red;
+            border-right: 1px solid red;
+    }
+        #full{
+            display: block;
+    }
+        #camp{
+        border-top: none;
+        border-bottom: none;
+    }
+        h4{
+        border-top: none;
+    }   
+        #think{
+        border-top: none;
+    }
+}
