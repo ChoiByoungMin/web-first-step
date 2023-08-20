@@ -6,6 +6,8 @@
 </head>
 <body>
     <h1> WEB 입문 </h1>
+    <input type="button" value="night" onclick="">
+    <input type="button" value="day" onclick="">
 <ul>
     <li><a href="index.html"> WEB 첫걸음</a></li>
 </ul>
@@ -14,9 +16,32 @@
     <li><a href="3.html"> CSS</a></li>
     <li><a href="4.html"> Javascript</a></li>
 </ol>
-<h2>Javascript</h2>
+    <h2>Javascript</h2>
 <p>
-    
+    <div> script 태그 안쪽에 javascript가 오도록 약속이 되어있다.</div>
 </p>
+    <script>
+        document.write("Hello world"); // document.write 자바스크립트 사용시 태그
+    </script>
+<p>
+    <div>html 과 javascript의 차이는 html은 정적이고 javascript는 동적이다</div>
+</p>
+    <h3>EX-></h3>
+        <h4>HTML</h4>
+            <div>1+1</div>
+    <p>    
+        <script>
+            document.write(1+1);
+        </script>
+    </p>
+<p>
+    <input type="button" value="hi" onclick="alert('hi')">
+    <!-- button안에 글을 넣고 싶다 value 태그 활용, alert 경고창 이벤트 발생  -->
+    <input type="text" onchange="alert('changed')">
+    <input type="text" onkeydown="alert('key down!')"> 
+</p>
+<p>
+    <div> 이 문자의 개수를 알고싶다. 콘솔 활용법 - 콘솔을 열고 alert ('' 사이에 문자를 작성하고 .legth) 하면 경고창으로 문자 개수를 알려준다.</div>
+</p>     
 </body>
 </html>
