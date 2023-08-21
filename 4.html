@@ -6,8 +6,14 @@
 </head>
 <body>
     <h1> WEB 입문 </h1>
-    <input type="button" value="night" onclick="">
-    <input type="button" value="day" onclick="">
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    ">
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    ">
 <ul>
     <li><a href="index.html"> WEB 첫걸음</a></li>
 </ul>
@@ -42,6 +48,18 @@
 </p>
 <p>
     <div> 이 문자의 개수를 알고싶다. 콘솔 활용법 - 콘솔을 열고 alert ('' 사이에 문자를 작성하고 .legth) 하면 경고창으로 문자 개수를 알려준다.</div>
+</p>
+<p>
+    <div> 'hello world' 이 소문자였던 문자열을 대문자로 나타내고싶다. .toUppercase()</div>
+    <!--javascript string 검색해서 모질라가  운영하는 웹페이지에 들어가 보면 string(문자열)의 예제들이 있다.-->
+</p>
+<p>
+    <div> .indexof('x') 소문자 x가 몇번째에 위치해있는지 알려준다. .trim '  문자열  ' 문자열 양옆 공백을 없에준다.</div>
+</p>
+<p>
+    <div> 어떤 문자열에서 특정 이름을 바꿔야하는데 일억개 정도 있다 그렇다면 어떻게 바꿀 것 인가?<br/>
+        ex - var name = '' name 이라는 변수를 설정해 들어갈 곳에 "~~~"+name+"~~~" 하면 코드를 수정할 때 변수만 바꿔주면 된다. 변수를 사용할 때 가급적 var 사용 var의 장단점을 알기전까지 되도록 사용. 
+    </div>
 </p>     
 </body>
 </html>
