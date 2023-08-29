@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1> WEB 입문 </h1>
+<!-- 
     <input type="button" value="night" onclick="
     document.querySelector('body').style.backgroundColor='black';
     document.querySelector('body').style.color='white';
@@ -14,6 +15,44 @@
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
     ">
+-->
+
+<!--    
+    <input id="night_day" type="button" value="night" onclick="
+        if (document.querySelector('#night_day').value === 'night'){
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+            document.querySelector('#night_day').value = 'day';
+        } else { 
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            document.querySelector('#night_day').value = 'night';
+        }
+    ">
+-->
+<!--
+    *************************
+    리팩토링, 중복의 제거
+
+    [목적] 리팩토링(ReFactoring. 다시 공장. 코드의 비효율적인 것을 제거하는 것. 
+    중복코드를 개선하는 등 코드를 깔끔히 정리해주는 것.)을 통해 코드의 중복을 제거한다.
+
+    cf) ctrl+D를 누르면 같은 문자열을 중복 선택해준다. (하나씩 추가되는 형태)
+    Ctrl+Shift+L을 누르면 커서가 위치된 문자열을 전부 선택해 준다
+    *************************
+-->
+    <input type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if (this.value === 'night'){
+                target.style.backgroundColor='black';
+                target.style.color='white';
+                this.value = 'day';
+            } else { 
+                target.style.backgroundColor='white';
+                target.style.color='black';
+                this.value = 'night';
+            }
+        ">
 <ul>
     <li><a href="index.html"> WEB 첫걸음</a></li>
 </ul>
@@ -60,6 +99,74 @@
     <div> 어떤 문자열에서 특정 이름을 바꿔야하는데 일억개 정도 있다 그렇다면 어떻게 바꿀 것 인가?<br/>
         ex - var name = '' name 이라는 변수를 설정해 들어갈 곳에 "~~~"+name+"~~~" 하면 코드를 수정할 때 변수만 바꿔주면 된다. 변수를 사용할 때 가급적 var 사용 var의 장단점을 알기전까지 되도록 사용. 
     </div>
-</p>     
+</p>
+<p>
+    <h3>Comparison operator & Boolean</h3>
+    <!--비교연산자와 블리언-->
+    <h3>===</h3>
+    <h4>1===1</h4>
+    <script>
+        document.write(1===1);
+    </script>
+    
+    <h3>===</h3>
+    <h4>1===2</h4>
+    <script>
+        document.write(1===2);
+    </script>
+
+    <h3>1&lt;2</h3> <!-- &lt; = < -->
+    <script>
+        document.write(1<2);
+    </script>
+
+    <h3>1&lt;1</h3> <!-- &lt; = < -->
+    <script>
+        document.write(1<1);
+    </script>
+</p>
+<p>
+    <h3>Conditional statements</h3> 
+    <!--조건문-->
+    <h4>Program</h4>
+    <script>
+        document.write("1<br>");
+        document.write("2<br>");
+        document.write("3<br>");
+        document.write("4<br>"); // 순서에 따라 실행된다.
+    </script>
+    <h2>IF - ture</h2>
+    <script>
+        document.write("1<br>");
+        if(true){
+            document.write("2<br>");
+        }   else {
+            document.write("3<br>");
+        }
+        document.write("4<br>");
+    </script>
+
+    <h2>IF - false</h2>
+    <script>
+        document.write("1<br>");
+        if(false){
+            document.write("2<br>");
+        }   else {
+            document.write("3<br>");
+        }
+        document.write("4<br>"); // 조건문의 형식
+    </script>
+</p>
+<input type="button" value="night" onclick="
+        if (this.value === 'night'){
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+            this.value = 'day';
+        } else { 
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            this.value = 'night';
+        }
+    ">
 </body>
 </html>
