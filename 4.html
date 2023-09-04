@@ -41,16 +41,31 @@
     Ctrl+Shift+L을 누르면 커서가 위치된 문자열을 전부 선택해 준다
     *************************
 -->
-    <input type="button" value="night" onclick="
+    <input id = "night_day" type="button" value="night" onclick="
             var target = document.querySelector('body');
             if (this.value === 'night'){
                 target.style.backgroundColor='black';
                 target.style.color='white';
                 this.value = 'day';
-            } else { 
+
+                var alist = document.querySelectorAll('a');
+                var i = 0 ;
+            while (i < alist.length) {
+                    alist[i].style.color = 'powderblue' ;
+                    i = i+1 ;
+                }
+
+        }   else { 
                 target.style.backgroundColor='white';
                 target.style.color='black';
                 this.value = 'night';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0 ;
+            while (i < alist.length) {
+                    alist[i].style.color = 'blue' ;
+                    i = i+1 ;
+                }
             }
         ">
 <ul>
@@ -157,16 +172,86 @@
         document.write("4<br>"); // 조건문의 형식
     </script>
 </p>
-<input type="button" value="night" onclick="
-        if (this.value === 'night'){
-            document.querySelector('body').style.backgroundColor='black';
-            document.querySelector('body').style.color='white';
-            this.value = 'day';
-        } else { 
-            document.querySelector('body').style.backgroundColor='white';
-            document.querySelector('body').style.color='black';
-            this.value = 'night';
+<input id = "night_day" type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if (this.value === 'night'){
+                target.style.backgroundColor='black';
+                target.style.color='white';
+                this.value = 'day';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0 ;
+            while (i < alist.length) {
+                    alist[i].style.color = 'powderblue' ;
+                    i = i+1 ;
+                }
+
+        }   else { 
+                target.style.backgroundColor='white';
+                target.style.color='black';
+                this.value = 'night';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0 ;
+            while (i < alist.length) {
+                    alist[i].style.color = 'blue' ;
+                    i = i+1 ;
+                }
+            }
+        ">
+    <h2>Array</h2>
+    <h3>Syntax</h3> <!--문법-->
+    <script>
+        var coworkers = ["egoing","leezche"]; // coworkers라는 변수에 배열이라는 [] 새로운 데이터 타입이 담김.
+    </script>
+    
+    <h2>get</h2> <!--가져오는 방법-->
+    <script>
+        document.write(coworkers[0]); // 첫번째자리의 값은 0번 = index 0번 = egoing
+        document.write(coworkers[1]); 
+    </script>
+    
+    <h2>count</h2>
+    <script>
+        document.write(coworkers.length);
+    </script>
+
+    <h2>add</h2>
+    <script>
+        coworkers.push('duru'); // coworkers 동료들
+        coworkers.push('taeho');
+    </script>
+    <script>
+        document.write(coworkers.length);
+    </script>
+    
+    <h2>Loop</h2>
+    <ul>
+    <script>
+        document.write('<li>1</li>');
+        var i = 0;
+        while(i < 3){
+            document.write('<li>2</li>');
+            document.write('<li>3</li>');
+            i = i + 1;
         }
-    ">
+        document.write('<li>4</li>');
+    </script>
+    </ul>
+
+    <h2>Loop & Array</h2>
+    <script>
+        var coworkers = ['egoing','leezche','duru','taeho'];
+    </script>
+    <h3>Co workers</h3>
+    <ul>
+        <script>
+            var i = 0;
+            while(i < coworkers.length){
+                document.write('<li><a href="http://a.com/'+coworkers[i]+'">'+coworkers[i]+'</a></li>');
+                i = i + 1;
+            }
+        </script>
+    </ul>
 </body>
 </html>
