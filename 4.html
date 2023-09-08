@@ -3,6 +3,40 @@
 <head>
     <title>web 입문1 - Javascript</title>
     <meta charset="utf-8">
+    <script>
+    function LinksSetColor(color){
+        var alist = document.querySelectorAll('a');
+        var i = 0 ;
+        while (i < alist.length) {
+                alist[i].style.color = color;
+                i = i+1 ;
+            }
+    }
+    function BodySetColor(color){
+        document.querySelector('body').style.color = color;
+    }
+    function BodySetBackgroundColor(color){
+        document.querySelector('body').style.backgroundColor = color;
+    }
+    function nightDayHandler(self){ 
+        var target = document.querySelector('body');
+            if (self.value === 'night'){
+                BodySetBackgroundColor('black');
+                BodySetColor('white');
+                self.value = 'day';
+
+                LinksSetColor('powderblue');
+        }   else { 
+                BodySetBackgroundColor('white');
+                BodySetColor('black');
+                self.value = 'night';
+
+                LinksSetColor('blue');
+            }
+    }
+    // this 값은  onclick 이라는 이벤트 안에서 this는 이 이벤트가 소속된 이 태그를 가르키도록 약속되어있는데
+    // 독립된 함수를 만들면 여기있는 this는 input 버튼이 아니고 전역객체를 가르키게된다. 웹브라우저에서는 윈도우가 된다. 지금은 이해 못할 수 있다.
+    </script>
 </head>
 <body>
     <h1> WEB 입문 </h1>
@@ -42,31 +76,7 @@
     *************************
 -->
     <input id = "night_day" type="button" value="night" onclick="
-            var target = document.querySelector('body');
-            if (this.value === 'night'){
-                target.style.backgroundColor='black';
-                target.style.color='white';
-                this.value = 'day';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0 ;
-            while (i < alist.length) {
-                    alist[i].style.color = 'powderblue' ;
-                    i = i+1 ;
-                }
-
-        }   else { 
-                target.style.backgroundColor='white';
-                target.style.color='black';
-                this.value = 'night';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0 ;
-            while (i < alist.length) {
-                    alist[i].style.color = 'blue' ;
-                    i = i+1 ;
-                }
-            }
+           nightDayHandler(this);
         ">
 <ul>
     <li><a href="index.html"> WEB 첫걸음</a></li>
@@ -173,31 +183,7 @@
     </script>
 </p>
 <input id = "night_day" type="button" value="night" onclick="
-            var target = document.querySelector('body');
-            if (this.value === 'night'){
-                target.style.backgroundColor='black';
-                target.style.color='white';
-                this.value = 'day';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0 ;
-            while (i < alist.length) {
-                    alist[i].style.color = 'powderblue' ;
-                    i = i+1 ;
-                }
-
-        }   else { 
-                target.style.backgroundColor='white';
-                target.style.color='black';
-                this.value = 'night';
-
-                var alist = document.querySelectorAll('a');
-                var i = 0 ;
-            while (i < alist.length) {
-                    alist[i].style.color = 'blue' ;
-                    i = i+1 ;
-                }
-            }
+            nightDayHandler(this);
         ">
     <h2>Array</h2>
     <h3>Syntax</h3> <!--문법-->
@@ -253,5 +239,52 @@
             }
         </script>
     </ul>
+
+    <h2>function</h2>
+    <h3>Basic</h3>
+    <ul>
+        <script>
+            function two(){
+                document.write('<li>2-1</li>');
+                document.write('<li>2-3</li>');
+            }
+            document.write('<li>1</li>');
+            two();
+            document.write('<li>3</li>');
+            two();
+        </script>
+    </ul>
+
+    <h2> parameter & Argument</h2> 
+    <!--함수는 입력과 출력으로 이루어짐 
+        입력에 해당 parameter 매개변수 argument 인자
+        출력에 해당 return -->
+    <script>
+        function onePlusone(){
+            document.write(1+1+'<br>');
+        }
+        onePlusone();
+        function sum(left,right){ // 인자를 받아서 함수안으로 매개해주는 변수 left, right = 매개변수 
+            document.write(left+right+'<br>');
+        }
+        function sumColorRed(left,right){
+            document.write('<div style = "color:red">'+(left+right)+'</div><br>');
+            //write 메서드가 파라미터를 문자열로 보느냐 숫자로 보느냐의 문제인것 같은데 괄호 넣어주어서 문자열인지 number형인지 확실하게 해주시면 되는듯 합니다.(left+ right)    
+        }   // number + string = string은 맞으나, '같은 연산 순위이면 왼쪽부터' 원칙에 의해, string + number + number + string은 ((string + number) + number) + string의 순서로 연산됩니다.
+            //<div~>' + 2 + 3 + '</div>' => 'div~>2' + 3 + '</div>' => '<div~>23' + '</div>' => '<div~>23</div>'
+        sum(2,3); // 2,3 = argument 인자
+        sumColorRed(2,3);
+        sum(3,4); // 3,4 = argument 인자
+    </script>
+
+    <h2>Return</h2>
+    <script>
+        function sum2(left, right){
+            return left+right;    
+        }
+        document.write(sum2(2,3)+'<br>');
+        document.write('<div style = "color:red">'+sum2(2,3)+'</div>');
+        document.write('<div style = "font-size:3rem">'+sum2(2,3)+'</div>');
+    </script>
 </body>
 </html>
